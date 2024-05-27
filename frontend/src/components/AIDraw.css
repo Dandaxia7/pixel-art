@@ -1,0 +1,169 @@
+#AIDraw {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#AICanvas {
+    position: fixed;
+    left: 20%;
+    top: 8%;
+    width: 50%;
+    height: 90%;
+    border: 1px solid rgb(25, 25, 25);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.toolBar {
+    position: fixed;
+    bottom: 0;
+    height: calc(100% - 50px);
+    width: 18%;
+    border-right: 2px solid #ccc;
+    background-color: #ffffff;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.toolBar h1 {
+    top: 10px;
+    position: absolute;
+    text-align: center;
+    font-size: 400%;
+    color: #666;
+}
+
+#prompt {
+    width: 100%;
+    height: 500px;
+    border: #ffffff;
+    border-radius: 10px;
+    background-color: #92f8cf;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#prompt p {
+    top: 10px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 1000;
+}
+
+#inputPrompt {
+    height: 300px;
+    border: #0ed815;
+    border-radius: 5px;
+    background-color: #f8f9f9;
+    width: 90%;
+    resize: none;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+#submitPrompt {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    border: #666;
+    border-radius: 5px;
+    width: 60px;
+    font-size: 18px;
+    -webkit-border-radius: 4px;
+            border-radius: 4px;
+    text-align: center;
+    text-shadow: 0 0 1px rgba(0, 0, 0, .2);
+    color: #fff;
+    background-color: #36b953;
+    cursor: pointer;
+    -webkit-transition: opacity .5s;
+            transition: opacity .5s;
+}
+#submitPrompt:hover{
+    opacity: .8;
+}
+
+.square {
+    opacity: 1;
+    transition: 2s;
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    left: 78%;
+    top: calc(50% - 120px);
+    animation: rotate 8s linear infinite;
+    border: 20px dashed rgba(8, 100, 0, 0.2);
+    box-shadow: 0 0 0 20px rgba(9, 60, 4, 0.5), inset 0 0 0 20px rgba(9, 60, 4, .4);
+}
+@keyframes rotate {
+    0%
+    {
+        transform: rotate(360deg);
+    }
+    100%
+    {
+        transform: rotate(0deg);
+    }
+}
+.square span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+}
+.square span:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-top: 20px solid #77f97b;
+    animation: animate 2s linear infinite;
+}
+@keyframes animate {
+    0%
+    {
+        left: -100%;
+    }
+    25%
+    {
+        left: 0;
+    }
+    50%,100%
+    {
+        left: 100%;
+    }
+}
+.square span:nth-child(1) {
+    transform: rotate(0deg);
+}
+.square span:nth-child(2) {
+    transform: rotate(90deg);
+}
+.square span:nth-child(3) {
+    transform: rotate(180deg);
+}
+.square span:nth-child(4) {
+    transform: rotate(270deg);
+}
+.square span:nth-child(1)::before {
+    animation-delay: 0s;
+}
+.square span:nth-child(2)::before {
+    animation-delay: 0.5s;
+}
+.square span:nth-child(3)::before {
+    animation-delay: 1s;
+}
+.square span:nth-child(4)::before {
+    animation-delay: 1.5s;
+}

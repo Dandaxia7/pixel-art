@@ -1,0 +1,72 @@
+#background {
+    position: fixed;
+    z-index: -10;
+    opacity: 0.4;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    width: 320%;
+    height: 150%;
+    border-radius: 5px;
+}
+
+#lobby1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#headImage {
+    display: block;
+    margin: auto;
+    --s: 280px;
+    --b: 5px;
+    --c1: #5252523c;
+    --c2: #ffffff5d;
+    --f: 1;
+    --bgOption: content-box no-repeat center/ calc(100% / var(--f)) 100%;
+    --shrink: calc((var(--s) / var(--f) - var(--s)) / 2 - var(--b) + 1px);
+
+    width: var(--s);
+    height: var(--s);
+    cursor: pointer;
+    transition: 0.5s;
+    padding-top: 100px;
+    outline: var(--b) solid var(--c1);
+    outline-offset: var(--shrink);
+    border-radius: 0 0 999px 999px;
+    transform: scale(var(--f));
+    background: radial-gradient(
+        circle closest-side,
+        var(--c2) calc(99% - var(--b)),
+        var(--c1) calc(99% - var(--b)),
+        var(--c1) 99%,
+        transparent 100%
+    ) var(--bgOption);
+    -webkit-mask: linear-gradient(#131313 0 0)
+        no-repeat center 
+        calc(1px - var(--shrink)) / calc(100% / var(--f) - 2 * var(--b)) 50%,
+        radial-gradient(circle closest-side, lightseagreen 100%, transparent) var(--bgOption);
+} 
+#headImage:hover {
+    --f: 1.35;
+}
+
+#Header {
+    position: relative;
+    margin: auto;
+    color: #00000094;
+    font-size: 96px;
+    letter-spacing: 15px;
+    text-align: center; 
+    line-height: 180px;
+    outline: none;
+    top: -75px;
+    --c: rgba(199, 227, 226, 0.568);
+    text-shadow: 0 0 10px var(--c),
+        0 0 20px var(--c),
+        0 0 40px var(--c),
+        0 0 80px var(--c),
+        0 0 160px var(--c);
+}

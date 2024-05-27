@@ -1,0 +1,63 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    height: 5%;
+    align-items: center;
+    background: linear-gradient(#eae7a6, #f1f2b1);
+    padding: 0px 10px;
+    position: fixed;
+    top: 0; width: 100%;
+    z-index: 999;
+    border-radius: 0 0 2% 2%;
+    box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.1);
+}
+nav p {
+    position: absolute;
+    font-weight: 800;
+    font-size: 24px;
+    left: 80px;
+    cursor: default;
+    font-style: italic;
+    color: #000000bb
+}
+
+#navBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#navBar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+#navBar li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.15rem;
+    font-weight: 800;
+    display: block;
+    margin: auto;
+    outline: none;
+    --c: rgb(195, 205, 138);
+    text-shadow: 0 0 10px var(--c),
+        0 0 20px var(--c),
+        0 0 40px var(--c),
+        0 0 80px var(--c),
+        0 0 160px var(--c);
+    transition: ease-in-out 0.3s;
+}
+#navBar li a:hover,
+#navBar li a.active {
+    color: #000;
+}
+#navBar li a:hover::after,
+#navBar li a.active::after {
+    content: "";
+    width: 50%;
+    height: 3px;
+    background-color: #000;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
