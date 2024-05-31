@@ -44,7 +44,7 @@ function History({ user }){
                 {7+(page-1)*9 < picturesList.length ? <img key={7} src={'data:image/png;base64,' + picturesList[7+(page-1)*9]} alt="historyImage"/> : null}
                 {8+(page-1)*9 < picturesList.length ? <img key={8} src={'data:image/png;base64,' + picturesList[8+(page-1)*9]} alt="historyImage"/> : null}
             </div>
-            <div id="history-footer">{showButton ? <a className="btn" onClick={getHistory}>显示图片</a> : (<span><button onClick={() => setPage(page-1>0?page-1:1)}>{'<'}</button> {`页数: ${page} / ${Math.ceil(picturesList.length/9)==0?1:Math.ceil(picturesList.length/9)}`} <button onClick={() => setPage(page+1<Math.ceil(picturesList.length/9)?page+1:Math.ceil(picturesList.length/9))}>{'>'}</button></span>)}</div>
+            <div id="history-footer">{showButton ? <a className="btn" onClick={getHistory}>显示图片</a> : (<span><button onClick={() => setPage(page-1>0?page-1:1)}>{'<'}</button> {`页数: ${page} / ${Math.ceil(picturesList.length/9)==0?1:Math.ceil(0.5+picturesList.length/9)}`} <button onClick={() => setPage(page+1<Math.ceil(picturesList.length/9)?page+1:Math.ceil(picturesList.length/9))}>{'>'}</button></span>)}</div>
         </div>
     )
 }
